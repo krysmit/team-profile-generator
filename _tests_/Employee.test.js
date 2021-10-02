@@ -8,7 +8,7 @@ describe("Name Input", () => {
       const input = string;
 
 // define what to expect as the output
-const output = [{ id: 3, url: "https://www.link3.dev" }];
+const output = string;
 
 // check if the function produces the expected output
       expect(filterByTerm(input, string)).toEqual(output);

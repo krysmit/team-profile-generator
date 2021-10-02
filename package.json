@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/krysmit/team-profile-generator/issues"
   },
-  "homepage": "https://github.com/krysmit/team-profile-generator#readme"
+  "homepage": "https://github.com/krysmit/team-profile-generator#readme",
+  "devDependencies": {
+    "jest": "^27.2.4"
+  }
 }

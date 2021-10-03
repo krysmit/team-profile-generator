@@ -3,8 +3,7 @@ var fs = require('fs');
 const employee = require("./lib/employee");
 const manager = require("./lib/manager");
 const engineer = require("./lib/engineer");
-const intern = require("./lib/intern");
-const engineer = require('./lib/engineer');
+const Intern = require("./lib/intern");
 const teamMember = [];
 
 //starting by creating the team manager
@@ -41,10 +40,10 @@ function createManager(){
 ])
     .then((responses) => {
         const manager = new manager(
-            responces.name,
-            responces.id,
-            responces.email,
-            responces.number
+            responses.name,
+            responses.id,
+            responses.email,
+            responses.number
         );
         teamMember.push(manager);
 });
@@ -108,12 +107,12 @@ function createIntern() {
         message: "What school did the intern attend?"
     },
 ])
-.then((responces) => {
+.then((responses) => {
     const intern = new intern(
-        responces.name,
-        responces.id,
-        responces.email,
-        responces.username
+        responses.name,
+        responses.id,
+        responses.email,
+        responses.username
     );
     teamMember.push(intern);
     });
@@ -148,12 +147,12 @@ function createEngineer(){
         message: "What school did the engineer attend?"
     }
 ])
-    .then((responces) => {
+    .then((responses) => {
         const engineer = new engineer(
-            responces.name,
-            responces.id,
-            responces.email,
-            responces.username
+            responses.name,
+            responses.id,
+            responses.email,
+            responses.username
         );
         teamMember.push(engineer);
         });

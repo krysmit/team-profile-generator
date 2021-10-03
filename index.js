@@ -4,9 +4,14 @@ const employee = require("./lib/employee");
 const manager = require("./lib/manager");
 const engineer = require("./lib/engineer");
 const intern = require("./lib/intern");
+const teamMember = [];
 
 //starting by creating the team manager
-const createManager = [
+const prompt = () => {
+    createManager();
+
+function createManager(){
+    inquirer.prompt([
     {
         type: "input",
         name: "name",
@@ -31,14 +36,26 @@ const createManager = [
         type: "input",
         name: "github",
         message: "What is the manager's github user name?",
-    },
-];
+    }
+])
+    .then((responses) => {
+        const manager = new manager(
+            responces.name,
+            responces.id,
+            responces.email,
+            responces.number
+        );
+        teamMember.push(manager);
+});
+}}
+
 
 //allowing user to choose other members of the team
-const createTeam = [
+function createTeam(){
+    inquirer.prompt([
     {
         type: "list",
-        name: "team member",
+        name: "teammember",
         message: "What other member of the team would you like to add?",
         choices: [
             "Intern",
@@ -46,9 +63,13 @@ const createTeam = [
             "No other members to add",
           ],
     }
-]
+])
+    .then((choice) => {
+        
+    }
+}
 
-//if engineer is chosen
+// //if engineer is chosen
 const createEngineer = [
     {
         type: "input",

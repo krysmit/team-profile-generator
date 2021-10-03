@@ -45,7 +45,9 @@ function createManager(){
             responses.email,
             responses.number
         );
+        console.log("manager info done")
         teamMember.push(manager);
+        createTeam();
 });
 }}
 
@@ -73,7 +75,7 @@ function createTeam(){
                 addEngineer();
                 break;
                 default:
-                //enter code here to prompt the creation of the html???
+                    console.log("oh no!")
         }
     });
 }
@@ -114,7 +116,9 @@ function createIntern() {
         responses.email,
         responses.username
     );
+    console.log("intern info done")
     teamMember.push(intern);
+    createTeam();
     });
 }
 
@@ -154,7 +158,9 @@ function createEngineer(){
             responses.email,
             responses.username
         );
+        console.log("engineer info done")
         teamMember.push(engineer);
+        createTeam();
         });
 }
 
@@ -164,4 +170,8 @@ const init = () => {
     .catch((err) => console.error("err"))
 }
 
-init();
+//init is running the program through and I cannot type in answers at the moment
+//init();
+
+//questPrompt at least shows me that the code is starting to run properly
+questPrompt();

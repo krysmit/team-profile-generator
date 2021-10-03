@@ -4,6 +4,7 @@ const employee = require("./lib/employee");
 const manager = require("./lib/manager");
 const engineer = require("./lib/engineer");
 const intern = require("./lib/intern");
+const engineer = require('./lib/engineer');
 const teamMember = [];
 
 //starting by creating the team manager
@@ -65,12 +66,62 @@ function createTeam(){
     }
 ])
     .then((choice) => {
-        
-    }
+        switch (choice) {
+            case "Intern":
+                addIntern();
+                break;
+            case "Engineer":
+                addEngineer();
+                break;
+                default:
+                //enter code here to prompt the creation of the html???
+        }
+    });
+}
+
+//if intern is chosen
+function createIntern() {
+    inquirer.prompt([
+    {
+        type: "input",
+        name: "name",
+        message: "What is the intern's name?",
+    },
+    {
+        type: "input",
+        name: "id",
+        message: "What is the intern's ID number?",
+    },
+    {
+        type: "input",
+        name: "email",
+        message: "What is the intern's email?",
+    },
+    {
+        type: "input",
+        name: "github",
+        message: "What is the intern's github user name?",
+    },
+    {
+        type: "input",
+        name: "school",
+        message: "What school did the intern attend?"
+    },
+])
+.then((responces) => {
+    const intern = new intern(
+        responces.name,
+        responces.id,
+        responces.email,
+        responces.username
+    );
+    teamMember.push(intern);
+    });
 }
 
 // //if engineer is chosen
-const createEngineer = [
+function createEngineer(){
+    inquirer.prompt([
     {
         type: "input",
         name: "name",
@@ -96,36 +147,18 @@ const createEngineer = [
         name: "school",
         message: "What school did the engineer attend?"
     }
-]
+])
+    .then((responces) => {
+        const engineer = new engineer(
+            responces.name,
+            responces.id,
+            responces.email,
+            responces.username
+        );
+        teamMember.push(engineer);
+        });
+}
 
-//if intern is chosen
-const createIntern = [
-    {
-        type: "input",
-        name: "name",
-        message: "What is the intern's name?",
-    },
-    {
-        type: "input",
-        name: "id",
-        message: "What is the intern's ID number?",
-    },
-    {
-        type: "input",
-        name: "email",
-        message: "What is the intern's email?",
-    },
-    {
-        type: "input",
-        name: "github",
-        message: "What is the intern's github user name?",
-    },
-    {
-        type: "input",
-        name: "school",
-        message: "What school did the intern attend?"
-    }
-]
 
 function init() {
     inquirer

@@ -7,7 +7,7 @@ const Intern = require("./lib/intern");
 const teamMember = [];
 
 //starting by creating the team manager
-const prompt = () => {
+const questPrompt = () => {
     createManager();
 
 function createManager(){
@@ -158,12 +158,10 @@ function createEngineer(){
         });
 }
 
-
-function init() {
-    inquirer
-    .prompt(createManager)
-    .then((responses) => {
-        console.log("Manager answers:",responses);
-    })}
+const init = () => {
+    questPrompt()
+    .then((responses) => console.log("Responses captured!"))
+    .catch((err) => console.error("err"))
+}
 
 init();

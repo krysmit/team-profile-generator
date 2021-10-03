@@ -49,9 +49,58 @@ const createTeam = [
 
 //if engineer is chosen
 const createEngineer = [
+    {
+        type: "input",
+        name: "name",
+        message: "What is the engineer's name?",
+    },
+    {
+        type: "input",
+        name: "id",
+        message: "What is the engineer's ID number?",
+    },
+    {
+        type: "input",
+        name: "email",
+        message: "What is the engineer's email?",
+    },
+    {
+        type: "input",
+        name: "github",
+        message: "What is the engineer's github user name?",
+    },
+    {
+        type: "input",
+        name: "school",
+        message: "What school did the engineer attend?"
+    }
 ]
 
 //if intern is chosen
 const createIntern = [
-    
+    {
+        type: "input",
+        name: "name",
+        message: "What is the intern's name?",
+    },
+    {
+        type: "input",
+        name: "id",
+        message: "What is the intern's ID number?",
+    },
+    {
+        type: "input",
+        name: "email",
+        message: "What is the intern's email?",
+    },
+    {
+        type: "input",
+        name: "github",
+        message: "What is the intern's github user name?",
+    },
+    {
+        type: "input",
+        name: "school",
+        message: "What school did the intern attend?"
+    }
 ]

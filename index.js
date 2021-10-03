@@ -165,10 +165,20 @@ function createEngineer(){
         });
 }
 
+function writeToFile(fileName, data) {
+    return fs.writeFileSync(fileName, data,function(err,res){
+        if (err) throw err;
+        console.log("HTML generated")
+    })
+}
+
 const init = () => {
     questPrompt()
-    .then((responses) => console.log("Responses captured!"))
-    .catch((err) => console.error("err"))
+    .then((responses) => {
+    console.log("Responses captured!");
+    writeToFile('newTeam.html', genHTML(responses));
+})
+    .catch((err) => console.error("err"));
 }
 
 //init runs the program into the next line and I cannot type in answers at the moment

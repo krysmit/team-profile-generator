@@ -105,3 +105,12 @@ const createIntern = [
         message: "What school did the intern attend?"
     }
 ]
+
+function init() {
+    inquirer
+    .prompt(createManager)
+    .then((responses) => {
+        console.log("Manager answers:",responses);
+    })}
+
+init();

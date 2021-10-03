@@ -4,6 +4,7 @@ const employee = require("./lib/employee");
 const manager = require("./lib/manager");
 const engineer = require("./lib/engineer");
 const Intern = require("./lib/intern");
+const genHTML = require('./dist/genHTML');
 const teamMember = [];
 
 //starting by creating the team manager
@@ -170,7 +171,7 @@ const init = () => {
     .catch((err) => console.error("err"))
 }
 
-//init is running the program through and I cannot type in answers at the moment
+//init runs the program into the next line and I cannot type in answers at the moment
 //init();
 
 //questPrompt at least shows me that the code is starting to run properly

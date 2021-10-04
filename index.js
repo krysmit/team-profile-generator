@@ -65,8 +65,8 @@ function createTeam() {
             ],
         }
     ])
-        .then((choice) => {
-            switch (choice) {
+        .then(({teammember}) => {
+            switch (teammember) {
                 case "Intern":
                     createIntern();
                     break;
@@ -99,11 +99,6 @@ function createIntern() {
         },
         {
             type: "input",
-            name: "github",
-            message: "What is the intern's github user name?",
-        },
-        {
-            type: "input",
             name: "school",
             message: "What school did the intern attend?"
         },
@@ -113,7 +108,7 @@ function createIntern() {
                 responses.name,
                 responses.id,
                 responses.email,
-                responses.username
+                responses.school
             );
             console.log("intern info done")
             teamMemberInt.push(intern);
@@ -144,18 +139,14 @@ function createEngineer() {
             name: "github",
             message: "What is the engineer's github user name?",
         },
-        {
-            type: "input",
-            name: "school",
-            message: "What school did the engineer attend?"
-        }
+
     ])
         .then((responses) => {
             const engineer = new Engineer(
                 responses.name,
                 responses.id,
                 responses.email,
-                responses.username
+                responses.github
             );
             console.log("engineer info done")
             teamMemberEng.push(engineer);

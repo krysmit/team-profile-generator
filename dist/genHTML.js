@@ -29,7 +29,7 @@ function generateMarkdown(data) {
               <a href="mailto:${responses.id}">${responses.id}</a>
               </p>
               <p id=github class="card-text">Github: 
-              <a href="https://www.github.com/${responses.gihub}">${responses.github}</p>
+              <a href="https://www.github.com/${responses.github}">${responses.github}</p>
               <p id=office class="card-text">Office #: ${responses.office}</p>
               <p id=school class="card-text">School: ${responses.school}</p>
             </div>

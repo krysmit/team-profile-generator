@@ -1,10 +1,11 @@
 var inquirer = require('inquirer');
 var fs = require('fs');
+var generateManager = require('./dist/genMgr');
 const Employee = require("./lib/Employee");
 const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
-// const genHTML = require('./dist/genHTML');
+const genHTML = require('./dist/genHTML');
 const teamMemberEng = [];
 const teamMemberInt = [];
 const teamMemberMgr = [];
@@ -162,13 +163,28 @@ function writeToFile(fileName, data) {
 }
 
 const createHTML = () => {
-    // questPrompt()
-    //     .then((responses) => {
-    //         console.log("Responses captured!");
-    //         writeToFile('newTeam.html', genHTML(responses));
-    //     })
-    //     .catch((err) => console.error("err"));
-    console.log(teamMemberEng, teamMemberInt, teamMemberMgr);
+    // console.log(teamMemberEng, teamMemberInt, teamMemberMgr);
+    var managerHTML = ""
+    for(let i=0; i < teamMemberMgr.length; i++) {
+       managerHTML += generateManager(teamMemberMgr[i]);
+    }
+    console.log("manager created", managerHTML);
+    var engineerHTML = ""
+    for(let i=0; i < teamMemberEng.length; i++) {
+        engineerHTML += generateManager(teamMemberEng[i]);
+    }
+    console.log("engineer created", engineerHTML);
+    var internHTML = ""
+    for(let i=0; i < teamMemberInt.length; i++) {
+        internHTML += generateManager(teamMemberInt[i]);
+    }
+    console.log("intern created", internHTML);
+    var HTML = managerHTML + engineerHTML + internHTML;
+    var fileData = genHTML(HTML);
+    fs.writeFileSync("index.HTML", fileData, function(err, res) {
+        if(err) throw err;
+    })
+    console.log("HTML generated!!!", fileData)
 }
 
 //init runs the program into the next line and I cannot type in answers at the moment

@@ -10,11 +10,11 @@ function genEngineer(responses) {
               <a href="mailto:${responses.id}">${responses.id}</a>
               </p>
               <p id=github class="card-text">Github: 
-              <a href="https://www.github.com/${responses.github}">${responses.github}</p>
+              <a href="https://www.github.com/${responses.github}">${responses.github}</a></p>
             </div>
           </div>
         </div>
     `)
 }
 
-module.exports = genEnineer;
+module.exports = genEngineer;

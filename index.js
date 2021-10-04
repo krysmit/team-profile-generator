@@ -4,7 +4,7 @@ const Employee = require("./lib/Employee");
 const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
-const genHTML = require('./dist/genHTML');
+// const genHTML = require('./dist/genHTML');
 const teamMemberEng = [];
 const teamMemberInt = [];
 const teamMemberMgr = [];
@@ -35,18 +35,13 @@ const teamMemberMgr = [];
                 name: "office",
                 message: "What is the manager's office number?",
             },
-            {
-                type: "input",
-                name: "github",
-                message: "What is the manager's github user name?",
-            }
         ])
             .then((responses) => {
-                const manager = new manager(
+                const manager = new Manager(
                     responses.name,
                     responses.id,
                     responses.email,
-                    responses.number
+                    responses.office
                 );
                 console.log("manager info done")
                 teamMemberMgr.push(manager);
@@ -73,10 +68,10 @@ function createTeam() {
         .then((choice) => {
             switch (choice) {
                 case "Intern":
-                    addIntern();
+                    createIntern();
                     break;
                 case "Engineer":
-                    addEngineer();
+                    createEngineer();
                     break;
                 default:
                     createHTML();
@@ -114,7 +109,7 @@ function createIntern() {
         },
     ])
         .then((responses) => {
-            const intern = new intern(
+            const intern = new Intern(
                 responses.name,
                 responses.id,
                 responses.email,
@@ -156,7 +151,7 @@ function createEngineer() {
         }
     ])
         .then((responses) => {
-            const engineer = new engineer(
+            const engineer = new Engineer(
                 responses.name,
                 responses.id,
                 responses.email,

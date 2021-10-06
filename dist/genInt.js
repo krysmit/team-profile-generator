@@ -7,7 +7,7 @@ function genIntern(responses) {
               <p id=name class="card-text">Name: ${responses.name}</p>
               <p id=id class="card-text">ID #: ${responses.id}</p>
               <p id=email class="card-text">Email: 
-              <a href="mailto:${responses.id}">${responses.id}</a>
+              <a href="mailto:${responses.email}">${responses.email}</a>
               </p>
               <p id=school class="card-text">School: ${responses.school}</p>
             </div>

@@ -1,17 +1,13 @@
-// import the function to test
-const employee = require("../lib/employee");
+const Employee = require("../lib/Employee");
 
+test("checking for name", () => {
+  const testValue = "Wednesday";
+  const nameCheck = new Employee(testValue);
+  expect(nameCheck.getName()).toBe(testValue);
+});
 
-// give an input to the function
-describe("Name Input", () => {
-    test("name should be a string", () => {
-      const input = string;
-
-// define what to expect as the output
-const output = string;
-
-// check if the function produces the expected output
-      expect(filterByTerm(input, string)).toEqual(output);
-  
-    });
-  });
+test("checking for id", () => {
+  const testValue = 5;
+  const idCheck = new Employee(testValue);
+  expect(idCheck.getID()).toBe(testValue);
+});

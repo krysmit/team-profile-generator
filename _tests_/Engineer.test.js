@@ -1,17 +1,7 @@
-// import the function to test
 const engineer = require("../lib/engineer");
 
-
-// give an input to the function
-describe("School Input", () => {
-    test("name should be a string", () => {
-      const input = string;
-
-// define what to expect as the output
-const output = string;
-
-// check if the function produces the expected output
-      expect(filterByTerm(input, string)).toEqual(output);
-  
-    });
-  });
+test("this should get a github username", () => {
+  const testValue = "testuser";
+  const gitUser = new Engineer("Chucky", 3, "scarydoll@email.com", testValue);
+  expect(gitUser.getGithub()).toBe(testValue);
+});

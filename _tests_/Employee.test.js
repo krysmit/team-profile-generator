@@ -9,11 +9,11 @@ test("checking for name", () => {
 test("checking for id", () => {
   const testValue = 5;
   const idCheck = new Employee("Wednesday",testValue);
-  expect(idCheck.getID()).toBe(testValue);
+  expect(idCheck.getId()).toBe(testValue);
 });
 
 test("checking for email", () => {
   const testValue = "addams@gmail.com";
   const emailCheck = new Employee("Wednesday", 5, testValue);
-  expect(emailCheck.getEmail).toBe(testValue);
+  expect(emailCheck.getEmail()).toBe(testValue);
 });

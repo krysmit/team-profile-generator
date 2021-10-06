@@ -1,17 +1,8 @@
-// // import the function to test
-// const manager = require("../lib/manager");
+const Manager = require("../lib/Manager");
 
-
-// // give an input to the function
-// describe("Office Number Input", () => {
-//     test("name should be a string", () => {
-//       const input = string;
-
-// // define what to expect as the output
-// const output = string;
-
-// // check if the function produces the expected output
-//       expect(filterByTerm(input, string)).toEqual(output);
+  test("this should return an office number", () => {
+      const testValue = 12;
+      const officeNumb = new Manager("Dracula", 1, "vampire@gmail.com", testValue);
+      expect(officeNumb.getOffice()).toBe(testValue);
+  });
   
-//     });
-//   });
